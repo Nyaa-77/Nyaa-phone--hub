@@ -7,6 +7,440 @@
     <title>Nyaa Phone Hub @@@</title>
 
     <style>
+      .call-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 13px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  background: #111;
+  font-weight: bold;
+      }
+      .reviews {
+  text-align: center;
+  padding: 40px 20px;
+  margin: 40px 0;
+}
+
+.reviews h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.review-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.review-card {
+  flex: 1;
+  min-width: 200px;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 15px;
+}
+
+.stars {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.review-card p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.review-card h3 {
+  margin-top: 12px;
+  font-size: 15px;
+}
+      .details-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: 2px solid #00bfff;
+  border-radius: 8px;
+  background: white;
+  color: #008fc0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.details-btn:hover {
+  background: #00bfff;
+  color: white;
+}
+      .phone-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin: 8px 0;
+      }
+      .special-offer {
+  text-align: center;
+  padding: 35px 20px;
+  margin: 30px 8%;
+  border-radius: 15px;
+  background: #111;
+  color: white;
+}
+
+.special-offer h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.special-offer p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.special-offer a {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+      .whatsapp-float {
+  position: fixed;
+  bottom: 75px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #25D366;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 28px;
+  z-index: 9999;
+      }
+      @media (max-width: 600px) {
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 24px;
+ header {
+  padding: 15px 5%;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 22px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+nav a {
+  margin-left: 0;
+  font-size: 14px;
+} }
+
+  .card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .product-image {
+    height: 160px;
+  }
+
+  .product-image img {
+    max-width: 120px;
+    max-height: 145px;
+  }
+
+  .categories {
+    justify-content: center;
+  }
+
+  .categories button {
+    padding: 9px 14px;
+    font-size: 13px;
+  }
+
+  .why-card,
+  .order-step {
+    min-width: 100%;
+  }
+
+  .about-us,
+  .contact-section,
+  .delivery-section,
+  .how-to-order {
+    padding: 30px 15px;
+  }
+
+      }
+      window.addEventListener("scroll", function () {
+  const button = document.getElementById("backToTop");
+
+  if (window.scrollY > 300) {
+    button.style.display = "block";
+  } else {
+    button.style.display = "none";
+  }
+});
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+      .delivery-section {
+  text-align: center;
+  padding: 40px 20px;
+  margin: 40px 0;
+  background: #f5f5f5;
+  border-radius: 15px;
+}
+
+.delivery-section h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.delivery-section p {
+  font-size: 15px;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+      .how-to-order {
+  text-align: center;
+  padding: 40px 20px;
+  margin: 40px 0;
+}
+
+.how-to-order h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.order-steps {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.order-step {
+  flex: 1;
+  min-width: 200px;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 15px;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  background: #111;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.order-step h3 {
+  margin: 10px 0;
+}
+
+.order-step p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+      .about-us {
+  text-align: center;
+  padding: 40px 20px;
+  margin: 40px 0;
+  background: #f5f5f5;
+  border-radius: 15px;
+}
+
+.about-us h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.about-us p {
+  max-width: 700px;
+  margin: 12px auto;
+  line-height: 1.7;
+  font-size: 15px;
+}
+      .hero-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+      }
+      .availability-badge {
+  display: inline-block;
+  padding: 6px 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  background: #e8f5e9;
+  color: #2e7d32;
+      }
+      .btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 13px 10px;
+  margin-top: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+}
+      .hero-subtitle {
+  font-size: 16px;
+  margin-top: 10px;
+  line-height: 1.5;
+  opacity: 0.9;
+      }
+      .card {
+  padding: 18px;
+  border-radius: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card .price {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+      .footer {
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+  background: #111;
+  color: white;
+}
+
+.footer h3 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.footer p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+      .contact-section {
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 40px;
+  background: #f5f5f5;
+  border-radius: 15px;
+}
+
+.contact-section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.contact-section p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.contact-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 13px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  background: #25D366;
+  font-weight: bold;
+}
+      .categories {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 15px 0 25px;
+}
+
+.categories button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 20px;
+  background: #f1f1f1;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.categories button:hover {
+  background: #ddd;
+}
+      .search-box {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 15px 18px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  box-sizing: border-box;
+  outline: none;
+}
+      .product-image {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 130px;
+  height: 160px;
+  object-fit: contain;
+  
+}
+
+      
         * {
             margin: 0;
             padding: 0;
@@ -209,7 +643,7 @@
 
 <body>
 
-    <!-- Navigation -->
+    <!-- Nav<igation -->
     <header>
 
         <div class="logo">
@@ -230,14 +664,9 @@
     <section class="hero">
 
         <div class="hero-text">
-
-            <h1>Find Your Perfect Phone</h1>
-
-            <p>
-                Welcome to Nyaa Phone Hub.
-                We provide quality smartphones and accessories
-                at affordable prices.
-            </p>
+          <h1>Find Your Perfect Phone</h1>
+<p class="hero-subtitle">Quality smartphones at affordable prices. Order easily through WhatsApp.</p>
+          <a href="#phones" class="hero-btn">Shop Now 📱</a>
 
             <a href="#phones" class="btn">Shop Now</a>
 
@@ -245,60 +674,191 @@
 
     </section>
 
+<section class="special-offer">
+  <h2>🔥 Special Offers</h2>
+  <p>Check out our latest smartphone deals and special offers.</p>
 
+  <a href="https://wa.me/233542511564?text=Hello%20Nyaa%20Phone%20Hub%2C%20I%20want%20to%20know%20about%20your%20special%20offers."
+     target="_blank">
+    💬 Ask About Offers
+  </a>
+</section>
     <!-- Phones -->
     <section class="products" id="phones">
+      <div class="search-box">
+  <input type="text" id="phoneSearch" placeholder="🔍 Search for a phone...">
+      </div>
+      <div class="categories">
+  <button onclick="filterPhones('all')">All</button>
+  <button onclick="filterPhones('iPhone')">iPhone</button>
+  <button onclick="filterPhones('Samsung')">Samsung</button>
+  <button onclick="filterPhones('Tecno')">Tecno</button>
+  <button onclick="filterPhones('Infinix')">Infinix</button>
+      </div>
+    
 
-        <h2>Popular Phones</h2>
+        <h2 id="phones">Popular Phones</h2>
 
         <div class="product-container">
 
-            <div class="card">
+   <div class="card">
+     <span class="availability-badge">Available Now</span>
+  <div class="product-image">
+  <img src="https://images.unsplash.com/photo-1632661674596-df8be070a5c5?auto=format&fit=crop&w=600&q=80" alt="iPhone 13">
+    </>
+  </div>
 
-                <div class="phone-image">
-                    📱
-                </div>
-
-                <h3>iPhone 13</h3>
+  <h3>iPhone 13</h3>
+  
+              <p class="phone-description">
+  128GB • Excellent camera • Fast performance
+              </p>
 
                 <p class="price">GH₵ 5,500</p>
+     <button class="details-btn" onclick="showDetails('iPhone 13', '128GB, excellent camera and fast performance.')">
+  View Details
+     </button>
 
-                <a href="#" class="btn">View Details</a>
+                <a href="https://wa.me/233542511564?text=Hello%20Nyaa%20Phone%20Hub%2C%20I%20want%20to%20order%20the%20iPhone%2013." class="btn">Order on WhatsApp</a>
 
-            </div>
+            </>
 
 
             <div class="card">
+              <span class="availability-badge">Available Now</span>
 
-                <div class="phone-image">
-                    📱
+                <div class="product-image">
+  <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=600&q=80" alt="Samsung Galaxy">
                 </div>
+                
 
                 <h3>Samsung Galaxy</h3>
+              <p class="phone-description">
+  128GB • Fast charging
+              </p>
 
                 <p class="price">GH₵ 4,200</p>
+              <button class="details-btn" onclick="showDetails('Samsung Galaxy', 'Quality Samsung smartphone with a great display and camera.')">
+  View Details
+              </button>
 
-                <a href="#" class="btn">View Details</a>
+                <a href="https://wa.me/233542511564?text=Hello%20Nyaa%20Phone%20Hub%2C%20I%20want%20to%20order%20the%20Samsung%20Galaxy." class="btn">Order on WhatsApp</a>
 
             </div>
 
 
             <div class="card">
+              <span class="availability-badge">Available Now</span>
 
-                <div class="phone-image">
-                    📱
+                <div class="product-image">
+  <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=600&q=80" alt="Tecno Camon">
                 </div>
+                
 
                 <h3>Tecno Camon</h3>
+              <p class="phone-description">
+  Large display • Powerful camera • Long-lasting battery
+              </p>
 
                 <p class="price">GH₵ 2,500</p>
+              <button class="details-btn" onclick="showDetails('Tecno Camon', 'Large display, powerful camera and long-lasting battery.')">
+  View Details
+              </button>
 
-                <a href="#" class="btn">View Details</a>
+                <a href="https://wa.me/233542511564" class="btn">Order on WhatsApp</a>
 
             </div>
 
         </div>
+<div class="card">
+  <span class="availability-badge">Available Now</span>
+ <div class="product-image">
+  <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80" alt="iPhone 14">
+ </div>
 
+<h3>iPhone 14</h3>
+  <p class="phone-description">
+  128GB • Great camera • Fast performance
+  </p>
+
+<p class="price">GH₵ 6,000</p>
+  <button class="details-btn" onclick="showDetails('iPhone 14', '128GB, great camera and fast performance.')">
+  View Details
+  </button>
+
+<a href="https://wa.me/233542511564?text=Hello%20Nyaa%20Phone%20Hub%2C%20I%20want%20to%20order%20the%20iPhone%2014." class="btn">
+    Order on WhatsApp
+</a>
+
+</div>
+      <div class="card">
+<span class="availability-badge">Available Now</span>
+    <div class="product-image">
+  <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80" alt="Smartphone">
+    </div>
+  
+    
+    <h3>Samsung Galaxy A55</h3>
+        <p class="phone-description">
+  256GB • Super AMOLED display • Great camera
+        </p>
+
+    <p class="price">GH₵ 3,200</p>
+        <button class="details-btn" onclick="showDetails('Samsung Galaxy A55', '256GB, Super AMOLED display and great camera.')">
+  View Details
+        </button>
+
+    <a href="https://wa.me/233542511564?text=Hello%20Nyaa%20Phone%20Hub%2C%20I%20want%20to%20order%20the%20Samsung%20Galaxy%20A55." class="btn">
+        Order on WhatsApp
+    </a>
+
+      </div>
+      <div class="card">
+        <span class="availability-badge">Available Now</span>
+
+    <div class="product-image">
+  <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=600&q=80" alt="Smartphone">
+    </div>
+        
+
+    <h3>Tecno Camon 30</h3><p class="phone-description">
+  128GB  • Fast charging
+    </p>
+
+    <p class="price">GH₵ 2,400</p>
+        <button class="details-btn" onclick="showDetails('Tecno Camon 30', 'Large display, powerful camera and long-lasting battery.')">
+  View Details
+        </button>
+
+    <a href="https://wa.me/233542511564?text=Hello%20Nyaa%20Phone%20Hub%2C%20I%20want%20to%20order%20the%20Tecno%20Camon%2030." class="btn">
+        Order on WhatsApp
+    </a>
+
+      </div>
+      <div class="card">
+        <span class="availability-badge">Available Now</span>
+
+    <div class="product-image">
+  <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=600&q=80" alt="Infinix Note 40">
+    </div>
+  
+
+    <h3>Infinix Note 40</h3>
+        <p class="phone-description">
+  256GB • AMOLED display • Fast charging
+        </p>
+
+    <p class="price">GH₵ 2,300</p>
+        <button class="details-btn" onclick="showDetails('Infinix Note 40', '256GB, AMOLED display and fast charging.')">
+  View Details
+        </button>
+
+    <a href="https://wa.me/233542511564?text=Hello%20Nyaa%20Phone%20Hub%2C%20I%20want%20to%20order%20the%20Infinix%20Note%2040." class="btn">
+        Order on WhatsApp
+    </a>
+
+      </div>
+      
     </section>
 
 
@@ -333,19 +893,156 @@
 
     </section>
 
+  <script>
+const searchInput = document.getElementById("phoneSearch");
+const products = document.querySelectorAll(".card");
 
-    <!-- Footer -->
-    <footer id="contact">
+searchInput.addEventListener("input", function () {
+  const searchText = this.value.toLowerCase();
 
-        <p><strong>Nyaa Phone Hub</strong></p>
+  products.forEach(function (product) {
+    const phoneName = product.querySelector("h3").textContent.toLowerCase();
 
-        <p>📞 0542511564</p>
+    if (phoneName.includes(searchText)) {
+      product.style.display = "";
+    } else {
+      product.style.display = "none";
+    }
+  });
+});
+    function filterPhones(category) {
+  const products = document.querySelectorAll(".card");
 
-        <p>📍 Tamale, Ghana</p>
+  products.forEach(function (product) {
+    const phoneName = product.querySelector("h3").textContent.toLowerCase();
 
-        <p>© 2026 Nyaa Phone Hub. All Rights Reserved.</p>
+    if (category === "all" || phoneName.includes(category.toLowerCase())) {
+      product.style.display = "";
+    } else {
+      product.style.display = "none";
+    }
+  });
+    }
+    window.addEventListener("scroll", function () {
+  const button = document.getElementById("backToTop");
 
-    </footer>
+  if (window.scrollY > 300) {
+    button.style.display = "block";
+  } else {
+    button.style.display = "none";
+  }
+});
 
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+    }
+    function showDetails(phone, details) {
+  alert(phone + "\n\n" + details);
+    }
+  </script>
+  <section class="how-to-order">
+  <h2>How to Order</h2>
+
+  <div class="order-steps">
+    <div class="order-step">
+      <div class="step-number">1</div>
+      <h3>Choose Your Phone</h3>
+      <p>Browse our available phones and choose the one you want.</p>
+    </div>
+
+    <div class="order-step">
+      <div class="step-number">2</div>
+      <h3>Click Order</h3>
+      <p>Click the WhatsApp order button on your chosen phone.</p>
+    </div>
+
+    <div class="order-step">
+      <div class="step-number">3</div>
+      <h3>Confirm Your Order</h3>
+      <p>Chat with us on WhatsApp to confirm your order.</p>
+    </div>
+  </div>
+  </section>
+  <section class="delivery-section">
+  <h2>Delivery & Location</h2>
+
+  <p>We can arrange delivery for your phone order.</p>
+
+  <p><strong>📍 Location:</strong>Tamale, Ghana</p>
+
+  <p><strong>📞 Phone:</strong> 0542511564</p>
+
+  <p>Contact us on WhatsApp to discuss delivery details.</p>
+  </section>
+  <section class="about-us" id="about">
+  <h2>About Nyaa Phone Hub</h2>
+
+  <p>
+    Nyaa Phone Hub is your trusted place to find quality smartphones at
+    affordable prices. We offer popular brands and make ordering simple
+    and convenient through WhatsApp.
+  </p>
+
+  <p>
+    Whether you're looking for an iPhone, Samsung, Tecno, or Infinix,
+    we're here to help you find the right phone.
+  </p>
+  </>
+  <section class="reviews">
+  <h2>Customer Reviews</h2>
+
+  <div class="review-container">
+
+    <div class="review-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"Great service and quick response."</p>
+      <h3>Happy Customer</h3>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"The ordering process was easy and convenient."</p>
+      <h3>Happy Customer</h3>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"Very helpful when choosing a phone."</p>
+      <h3>Happy Customer</h3>
+    </div>
+
+  </div>
+  </section>
+<section class="contact-section" id="contact">
+  <h2>Contact Us</h2>
+  <p>Need help choosing a phone? Contact Nyaa Phone Hub today.</p>
+
+  <p><strong>📞 Phone:</strong> 0542511564</p>
+
+  <a href="https://wa.me/233542511564?text=Hello%20Nyaa%20Phone%20Hub%2C%20I%20need%20help%20choosing%20a%20phone."
+     class="contact-btn">
+    💬 Chat with us on WhatsApp
+  </a>
+  <a href="tel:+233542511564" class="call-btn">
+  📞 Call Us
+  </a>
+</>
+  <footer class="footer">
+  <h3>Nyaa Phone Hub</h3>
+  <p>Your trusted place for quality smartphones.</p>
+  <p>📞 0542511564</p>
+  <p>📍 Tamale, Ghana</p>
+
+  <p>© 2026 Nyaa Phone Hub. All rights reserved.</p>
+  </footer>
+  <button id="backToTop" onclick="scrollToTop()">⬆️ Top</button>
+  <a href="https://wa.me/233542511564?text=Hello%20Nyaa%20Phone%20Hub%2C%20I%20want%20to%20make%20an%20inquiry."
+   class="whatsapp-float"
+   target="_blank">
+  💬
+  </a>
 </body>
 </html>
