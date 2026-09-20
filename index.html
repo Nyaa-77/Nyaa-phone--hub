@@ -638,6 +638,73 @@ function scrollToTop() {
                 font-size: 38px;
             }
         }
+      .details-box {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  max-width: 400px;
+  padding: 25px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  z-index: 10000;
+  text-align: center;
+}
+
+.details-box h2 {
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.details-box p {
+  line-height: 1.6;
+  color: #555;
+}
+
+.close-details {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+    }
+      .details-order-btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 13px 20px;
+  border-radius: 10px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.details-order-btn:hover {
+  background: #1ebe5d;
+  }
+      #detailsImage {
+  width: 140px;
+  height: 180px;
+  object-fit: contain;
+  display: block;
+  margin: 10px auto 15px;
+  border-radius: 10px;
+      }
+      .details-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9998;
+      }
     </style>
 </head>
 
@@ -938,10 +1005,35 @@ function scrollToTop() {
     top: 0,
     behavior: "smooth"
   });
-    }
     function showDetails(phone, details) {
-  alert(phone + "\n\n" + details);
+  document.getElementById("detailsTitle").textContent = phone;
+  document.getElementById("detailsText").textContent = details;
+
+  const image = document.getElementById("detailsImage");
+
+  if (phone === "iPhone 13") {
+    image.src = "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80";
+  } else if (phone === "iPhone 14") {
+    image.src = "https://images.unsplash.com/photo-1678685888221-cda5f8b1f6e8?auto=format&fit=crop&w=600&q=80";
+  } else if (phone === "Samsung Galaxy A55") {
+    image.src = "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80";
+  } else if (phone === "Infinix Note 40") {
+    image.src = "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80";
+  } else if (phone === "Tecno Camon 30") {
+    image.src = "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80";
+  }
+
+  const message = "Hello Nyaa Phone Hub, I want to order the " + phone + ".";
+  const whatsappLink = "https://wa.me/233542511564?text=" + encodeURIComponent(message);
+
+  document.getElementById("detailsOrderBtn").href = whatsappLink;
+  document.getElementById("detailsOverlay").style.display = "block";
+  document.getElementById("detailsBox").style.display = "block";
     }
+  function closeDetails() {
+  document.getElementById("detailsBox").style.display = "none";
+  document.getElementById("detailsOverlay").style.display = "none";
+}
   </script>
   <section class="how-to-order">
   <h2>How to Order</h2>
@@ -1044,5 +1136,21 @@ function scrollToTop() {
    target="_blank">
   💬
   </a>
+  <div id="detailsOverlay" class="details-overlay" onclick="closeDetails()"></div>
+  <div id="detailsBox" class="details-box">
+  <button class="close-details" onclick="closeDetails()">✕</button>
+    <img id="detailsImage" src="" alt="Phone">
+
+  <h2 id="detailsTitle"></h2>
+
+  <p id="detailsText"></p>
+
+  <a id="detailsOrderBtn"
+     class="details-order-btn"
+     href="#"
+     target="_blank">
+    💬 Order on WhatsApp
+  </a>
+  </div>
 </body>
 </html>
