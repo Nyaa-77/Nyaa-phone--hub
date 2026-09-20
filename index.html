@@ -960,7 +960,8 @@ function scrollToTop() {
 
     </section>
 
-  <script>
+<script>
+
 const searchInput = document.getElementById("phoneSearch");
 const products = document.querySelectorAll(".card");
 
@@ -977,7 +978,9 @@ searchInput.addEventListener("input", function () {
     }
   });
 });
-    function filterPhones(category) {
+
+
+function filterPhones(category) {
   const products = document.querySelectorAll(".card");
 
   products.forEach(function (product) {
@@ -989,51 +992,37 @@ searchInput.addEventListener("input", function () {
       product.style.display = "none";
     }
   });
-    }
-    window.addEventListener("scroll", function () {
-  const button = document.getElementById("backToTop");
+}
 
-  if (window.scrollY > 300) {
-    button.style.display = "block";
-  } else {
-    button.style.display = "none";
-  }
-});
 
 function scrollToTop() {
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
-    function showDetails(phone, details) {
+}
+
+
+function showDetails(phone, details) {
   document.getElementById("detailsTitle").textContent = phone;
   document.getElementById("detailsText").textContent = details;
 
-  const image = document.getElementById("detailsImage");
-
-  if (phone === "iPhone 13") {
-    image.src = "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80";
-  } else if (phone === "iPhone 14") {
-    image.src = "https://images.unsplash.com/photo-1678685888221-cda5f8b1f6e8?auto=format&fit=crop&w=600&q=80";
-  } else if (phone === "Samsung Galaxy A55") {
-    image.src = "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80";
-  } else if (phone === "Infinix Note 40") {
-    image.src = "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80";
-  } else if (phone === "Tecno Camon 30") {
-    image.src = "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80";
-  }
-
   const message = "Hello Nyaa Phone Hub, I want to order the " + phone + ".";
-  const whatsappLink = "https://wa.me/233542511564?text=" + encodeURIComponent(message);
+  const whatsappLink =
+    "https://wa.me/233542511564?text=" + encodeURIComponent(message);
 
   document.getElementById("detailsOrderBtn").href = whatsappLink;
+
   document.getElementById("detailsOverlay").style.display = "block";
   document.getElementById("detailsBox").style.display = "block";
-    }
-  function closeDetails() {
+}
+
+
+function closeDetails() {
   document.getElementById("detailsBox").style.display = "none";
   document.getElementById("detailsOverlay").style.display = "none";
 }
+
   </script>
   <section class="how-to-order">
   <h2>How to Order</h2>
